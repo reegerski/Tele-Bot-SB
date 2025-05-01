@@ -1,0 +1,21 @@
+from telegram.ext import Updater, CommandHandler
+
+# Replace with your NEW token (put it in quotes!)
+TOKEN = '7697691070:AAHXBCluseFq8GbDoPVrbCf6h0RNk_WG33w'
+
+# Define a start command
+def start(update, context):
+    update.message.reply_text("Hello! I'm your bot.")
+
+# Set up the bot
+updater = Updater(token=TOKEN, use_context=True)
+dispatcher = updater.dispatcher
+
+# Add the command handler
+dispatcher.add_handler(CommandHandler('start', start))
+
+# Start the bot
+updater.start_polling()
+updater.idle()
+pip install python-telegram-bot==13.15
+python your_script_name.py
